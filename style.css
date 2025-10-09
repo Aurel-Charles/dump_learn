@@ -1,0 +1,24 @@
+button:active {
+    background-color: red;
+}
+
+input:focus {
+    background-color: blue;
+}
+
+
+li:first-child {
+    background-color: green;
+}
+
+li:last-child {
+    background-color: yellow;
+}
+
+li:nth-child(2) {
+    background-color: purple;
+}
+
+p:only-child {
+    background-color: orange;
+}
