@@ -1,24 +1,73 @@
-button:active {
-    background-color: red;
+html{
+    font-size: 2rem;
 }
 
-input:focus {
-    background-color: blue;
+.parent{
+    background-color: rgb(221, 250, 255);
+    height: calc(4  * 100vh);
+    display: flex; 
+    flex-direction: column;
+    padding:3rem 0 ;
+
 }
 
-
-li:first-child {
-    background-color: green;
+.titre{
+    text-align: center;
 }
 
-li:last-child {
-    background-color: yellow;
+.hero-title{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+.count{
+    letter-spacing: calc(100vh *0.1);
+    font-size: 2rem;
+}
+.lets{
+    letter-spacing: calc(100vh *0.1);
+    font-size: 2rem;
+    padding: 0 1rem 0 1rem;
+}
+.parent > div:nth-child(n+2){
+    font-size: 5rem;
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    margin: 0 3rem;
 }
 
-li:nth-child(2) {
-    background-color: purple;
+.one{
+    background: radial-gradient(circle, rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);;
+    position: sticky;
+    top: 0;
+}
+.two{
+    background: linear-gradient(90deg,rgba(42, 155, 115, 1) 0%, rgba(87, 89, 199, 1) 50%, rgba(161, 57, 13, 1) 100%);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+.three{
+    background: radial-gradient(circle,rgba(58, 70, 180, 1) 0%, rgba(253, 29, 29, 1) 28%, rgba(252, 176, 69, 1) 43%);;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+.four{
+    background: linear-gradient(30deg,rgba(238, 174, 202, 1) 4%, rgba(148, 187, 233, 1) 100%);
+    position: sticky;
+    top: 0;
+    z-index: 3;
 }
 
-p:only-child {
-    background-color: orange;
+svg{
+    position: fixed;
+    left: 4px;
+    bottom: 4px;
+    z-index: 5;
+    opacity: 0.5;
 }
