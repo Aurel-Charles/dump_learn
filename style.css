@@ -1,40 +1,62 @@
-html{
-    font-size: 20px;
-    font-size: max(7vw, 16px);
+:root.light{
+    --main-background: white ;
+    --second-backfround: rgb(221, 250, 255);
+    --text-color: black;
+}
+:root.dark{
+    --main-background: rgb(0, 0, 0) ;
+    --second-backfround:  rgb(0, 88, 96);
+    --text-color: white;
 }
 
+html{
+    font-size: 2rem;
+    color: var(--text-color);
+}
+body{
+    width: max(375px, 100%);
+}
 .parent{
-    background-color: rgb(221, 250, 255);
+    background-color: var(--second-backfround);
     height: calc(4  * 100vh);
     display: flex; 
     flex-direction: column;
-    padding:0 0 3rem 0 ;
-
 }
 
 .titre{
     text-align: center;
+    background-color: var(--main-background);
+    margin: 0;
+    padding: 4% 0;
 }
 
 .hero-title{
-    display: flex;
-    flex-direction: column;
     align-items: stretch;
+    background-color: var(--second-backfround);
+    padding: 16vh 0;
 }
-
 .lets{
-    letter-spacing: min(calc(100vh *0.1), 2rem);
-    padding: 0 1rem 0 1rem;
+    letter-spacing: calc(calc(100vw - calc(5ch))/8);
+    font-size: 2rem;
+    margin: 0;
+    transform: scaleY(4);
 }
-.parent > div:nth-child(n+2){
-    /* font-size: 5rem; */
+.count{
+    letter-spacing: calc(calc(100vw - calc(5ch))/8);
+    font-size: 2rem;
+    margin: 0;
+    text-align: end;
+    transform: scaleY(6);
+}
+.parent > div{
+    font-size: clamp(1rem, -2rem + 13.3333vw, 5rem);
     height: 100vh;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 15px;
-    margin: 0 max(1rem, 5vw);
+    margin: 0 clamp(0.3rem, 3%, 5rem);
 }
 
 .one{
@@ -49,7 +71,7 @@ html{
     z-index: 1;
 }
 .three{
-    background: radial-gradient(circle,rgba(58, 70, 180, 1) 0%, rgba(253, 29, 29, 1) 28%, rgba(252, 176, 69, 1) 43%);;
+    background: radial-gradient(circle,rgba(58, 70, 180, 1) 32%, rgba(253, 29, 29, 1) 80%, rgba(252, 176, 69, 1) 100%);;
     position: sticky;
     top: 0;
     z-index: 2;
