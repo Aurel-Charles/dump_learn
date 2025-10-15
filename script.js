@@ -6,6 +6,8 @@ function setTheme() {
     }else if (newTheme === "light") {
         root.className = 'dark'
     }
+    console.log(root.className);
+    
 }
 
 const themeSwitch = document.querySelector('#toggle')
