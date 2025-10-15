@@ -1,5 +1,6 @@
 html{
-    font-size: 2rem;
+    font-size: 20px;
+    font-size: max(7vw, 16px);
 }
 
 .parent{
@@ -7,7 +8,7 @@ html{
     height: calc(4  * 100vh);
     display: flex; 
     flex-direction: column;
-    padding:3rem 0 ;
+    padding:0 0 3rem 0 ;
 
 }
 
@@ -20,24 +21,20 @@ html{
     flex-direction: column;
     align-items: stretch;
 }
-.count{
-    letter-spacing: calc(100vh *0.1);
-    font-size: 2rem;
-}
+
 .lets{
-    letter-spacing: calc(100vh *0.1);
-    font-size: 2rem;
+    letter-spacing: min(calc(100vh *0.1), 2rem);
     padding: 0 1rem 0 1rem;
 }
 .parent > div:nth-child(n+2){
-    font-size: 5rem;
+    /* font-size: 5rem; */
     height: 100vh;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 15px;
-    margin: 0 3rem;
+    margin: 0 max(1rem, 5vw);
 }
 
 .one{
