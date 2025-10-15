@@ -1,6 +1,6 @@
 :root.light{
     --main-background: white ;
-    --second-backfround: rgb(221, 250, 255);
+    --second-backfround: rgb(196, 244, 253);
     --text-color: black;
 }
 :root.dark{
@@ -27,26 +27,60 @@ body{
     text-align: center;
     background-color: var(--main-background);
     margin: 0;
-    padding: 4% 0;
+    padding: 4% 0 0 0;
 }
+
+.container-toggle{
+    background-color: var(--main-background);
+    display: flex;
+    justify-content: center;
+    padding: 1%;
+}
+
+#toggle{
+    background-color: var(--main-background);
+    border-style: none;
+}
+
+.theme-icon{
+    color: var(--text-color);
+}
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+
+
+
 
 .hero-title{
     align-items: stretch;
+    justify-content: center;
     background-color: var(--second-backfround);
     padding: 16vh 0;
+    padding-left: 1ch;
 }
 .lets{
     letter-spacing: calc(calc(100vw - calc(5ch))/8);
     font-size: 2rem;
-    margin: 0;
+    margin: 0.5rem;
     transform: scaleY(4);
+    opacity: 50%;
 }
 .count{
-    letter-spacing: calc(calc(100vw - calc(5ch))/8);
+    letter-spacing: calc(calc(100vw - calc(5ch))/12);
     font-size: 2rem;
     margin: 0;
     text-align: end;
     transform: scaleY(6);
+    opacity: 50%;
+    margin: 0.5rem;
 }
 .parent > div{
     font-size: clamp(1rem, -2rem + 13.3333vw, 5rem);
