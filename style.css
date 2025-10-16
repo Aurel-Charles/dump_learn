@@ -74,7 +74,7 @@ pre {
  */
 
 a {
-  background-color: transparent;
+  background-color: transelement;
 }
 
 /**
@@ -377,12 +377,12 @@ template {
 }
 :root.light{
     --main-background: white ;
-    --second-backfround: rgb(196, 244, 253);
+    --second-background: rgb(196, 244, 253);
     --text-color: black;
 }
 :root.dark{
     --main-background: rgb(0, 0, 0) ;
-    --second-backfround:  rgb(0, 88, 96);
+    --second-background:  rgb(0, 88, 96);
     --text-color: white;
 }
 
@@ -394,13 +394,7 @@ html{
 body{
     width: max(375px, 100%);
 }
-.parent{
-    background-color: var(--second-backfround);
-    height: calc(4  * 100vh);
-    display: flex; 
-    flex-direction: column;
-    padding-bottom: 3%;
-}
+
 
 .titre{
     text-align: center;
@@ -441,7 +435,7 @@ body{
 .hero-title{
     align-items: stretch;
     justify-content: center;
-    background-color: var(--second-backfround);
+    background-color: var(--second-background);
     padding: 16vh 0;
     padding-left: 1ch;
 }
@@ -461,18 +455,99 @@ body{
     opacity: 50%;
     margin: 0.5rem;
 }
-.parent > div{
+
+.element-box{
+    background-color: var(--second-background);
+    height: calc(4  * 100vh);
+    display: flex; 
+    flex-direction: column;
+    padding-bottom: 3%;
+}
+
+.element {
     font-size: clamp(1rem, -2rem + 13.3333vw, 5rem);
     height: 100vh;
     text-align: center;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column; /* Stack vertically */
+    justify-content: space-around; /* Center vertically as a group */
+    align-items: center; /* Center horizontally */
     border-radius: 15px;
     margin: 0 clamp(0.3rem, 3%, 5rem);
+    --_bg: var(--bg, white);
+    --_bg-text: var(--bg-text, rgb(116, 116, 116));
+    --_bg-num: var(--bg-num, rgb(8, 0, 255));
+    --_btn: var(--btn, green);
+    background: var(--_bg);
+    position: var(--element-pos);
+    top: var(--element-top);
 }
 
-.one{
+
+.text{
+    background: var(--_bg-text);
+    padding: min(1rem, 0.3rem);
+    margin: 0;
+}
+
+.num{
+    background: var(--_bg-num);
+    padding: min(1rem, 0.3rem);
+    margin: 0;
+    border-radius: 50%;
+    box-shadow: 0 20px 20px black;
+}
+
+.btn{
+    background: var(--_btn);
+    font-size: 1rem;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;          
+    box-shadow: 0 0 10px #eeeeee8d;
+    border-radius: 10px;
+    display: block;
+}
+.btn:hover{    
+    background-position: right center; /* change the direction of the change here */
+    box-shadow: 0 0 20px #eeeeeeff;
+    text-decoration: none;
+}
+
+
+.element-one{
+    --bg-text: var(--main-background);
+    --bg-num: rgb(38, 57, 152);
+    --btn: radial-gradient(circle, rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
+    --bg: radial-gradient(circle, rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
+}
+.element-two{
+    --bg-text: var(--main-background);
+    --bg-num: rgb(148, 38, 152);
+    --btn: linear-gradient(90deg,rgba(42, 155, 115, 1) 0%, rgba(87, 89, 199, 1) 50%, rgba(161, 57, 13, 1) 100%);
+    --bg: linear-gradient(90deg,rgba(42, 155, 115, 1) 0%, rgba(87, 89, 199, 1) 50%, rgba(161, 57, 13, 1) 100%);
+    z-index: 1;
+}
+.element-three {
+    --bg-text: var(--main-background);
+    --bg-num: rgb(179, 146, 38);
+    --btn: radial-gradient(circle,rgba(58, 70, 180, 1) 32%, rgba(253, 29, 29, 1) 80%, rgba(252, 176, 69, 1) 100%);
+    --bg: radial-gradient(circle,rgba(58, 70, 180, 1) 32%, rgba(253, 29, 29, 1) 80%, rgba(252, 176, 69, 1) 100%);
+    z-index: 2;
+}
+
+.element-four {
+    --bg-text: var(--main-background);
+    --bg-num: rgb(38, 152, 83);
+    --btn: linear-gradient(30deg,rgba(238, 174, 202, 1) 4%, rgba(148, 187, 233, 1) 100%);
+    --bg: linear-gradient(30deg,rgba(238, 174, 202, 1) 4%, rgba(148, 187, 233, 1) 100%);
+    z-index: 3;
+}
+
+
+/* .one{
     background: radial-gradient(circle, rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);;
     position: var(--element-pos);
     top: var(--element-top);
@@ -494,7 +569,7 @@ body{
     position: var(--element-pos);
     top: var(--element-top);
     z-index: 3;
-}
+} */
 
 svg{
     position: fixed;
@@ -503,3 +578,26 @@ svg{
     z-index: 5;
     opacity: 0.5;
 }
+
+
+
+         .btn-grad {background-image: linear-gradient(to right, #ff6e7f 0%, #bfe9ff  51%, #ff6e7f  100%)}
+         .btn-grad {
+            margin: 10px;
+            padding: 15px 45px;
+            text-align: center;
+            text-transform: uppercase;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;            
+            box-shadow: 0 0 20px #eee;
+            border-radius: 10px;
+            display: block;
+          }
+
+          .btn-grad:hover {
+            background-position: right center; /* change the direction of the change here */
+            color: #fff;
+            text-decoration: none;
+          }
+         
